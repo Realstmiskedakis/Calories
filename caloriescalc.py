@@ -29,17 +29,21 @@ def calories():
         print(">> Age: 15-18 / 18-30 / 30-60 / 60<\n")
 
         sex = input(">> Enter your Gender ( Sex ), Answer w/ Male or Female: ").lower()
-        age = int(input(">> Tell me your age: "))
-        weight = int(input(">> Tell me your weight (Kg - Kilograms): "))
-        height = float(input(">> Tell me your height (cm - Centimeters): "))
+        
+        if sex != 'male' or 'female':
+            print("Invalid Input, Rerun the program.")
+            quit()
+        else:
+            age = int(input(">> Tell me your age: "))
+            weight = int(input(">> Tell me your weight (Kg - Kilograms): "))
+            height = float(input(">> Tell me your height (cm - Centimeters): "))
+            if sex == 'male':
+                male_cal = 66 + (13.7 * weight) + (5 * height) - (6.8 * age)
+                print(">> Your Daily Calories is: ", male_cal)
 
-        if sex == 'male':
-            male_cal = 66 + (13.7 * weight) + (5 * height) - (6.8 * age)
-            print(">> Your Daily Calories is: ", male_cal)
-
-        elif sex == 'female':
-            female_cal = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age)
-            print(">> Your Daily Calories is: ", female_cal)
+            elif sex == 'female':
+                female_cal = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age)
+                print(">> Your Daily Calories is: ", female_cal)
 
     except (TypeError, ValueError, IndexError):
         print("Invalid Input, Rerun the program.")
