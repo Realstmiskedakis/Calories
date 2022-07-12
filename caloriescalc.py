@@ -19,7 +19,7 @@ def calories():
 
         # It's a function that calculates the daily calories of a person.
         print(">> Find out how many calories you should eat per day")
-        print(">> Age: 15-18 / 18-30 / 30-60 / 60<\n")
+
 
         sex = input(">> Enter your Gender ( Sex ), Answer w/ Male or Female: ").lower()
         
