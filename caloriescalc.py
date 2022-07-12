@@ -13,16 +13,9 @@ About this Program:
     *find out how many calories you should eat per day*
 """
 
-# Packages / Libraries
-import os
-
-
 # The Calories Function
 def calories():
     try:
-
-        # It's a command that clears the screen.
-        os.system('cls')
 
         # It's a function that calculates the daily calories of a person.
         print(">> Find out how many calories you should eat per day")
@@ -30,10 +23,11 @@ def calories():
 
         sex = input(">> Enter your Gender ( Sex ), Answer w/ Male or Female: ").lower()
         
-        if sex != 'male' or 'female':
+        if sex not in ('male', 'female'):
             print("Invalid Input, Rerun the program.")
             quit()
-        else:
+            
+        elif sex == 'male' or 'female':
             age = int(input(">> Tell me your age: "))
             weight = int(input(">> Tell me your weight (Kg - Kilograms): "))
             height = float(input(">> Tell me your height (cm - Centimeters): "))
