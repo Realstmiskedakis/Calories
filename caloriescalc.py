@@ -19,15 +19,14 @@ def calories():
 
         # It's a function that calculates the daily calories of a person.
         print(">> Find out how many calories you should eat per day")
-
+        print(">> Age: 15-18 / 18-30 / 30-60 / 60<\n")
 
         sex = input(">> Enter your Gender ( Sex ), Answer w/ Male or Female: ").lower()
-        
+
         if sex not in ('male', 'female'):
             print("Invalid Input, Rerun the program.")
-            quit()
-            
-        elif sex == 'male' or 'female':
+            return None
+        else:
             age = int(input(">> Tell me your age: "))
             weight = int(input(">> Tell me your weight (Kg - Kilograms): "))
             height = float(input(">> Tell me your height (cm - Centimeters): "))
@@ -38,10 +37,11 @@ def calories():
             elif sex == 'female':
                 female_cal = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age)
                 print(">> Your Daily Calories is: ", female_cal)
+                return None
 
     except (TypeError, ValueError, IndexError):
         print("Invalid Input, Rerun the program.")
-        quit()
+        return None
 
 
 calories()
